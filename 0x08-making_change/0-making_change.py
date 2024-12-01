@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
 def makeChange(coins, total):
-     """
+    """
     Determine the fewest number of coins needed to meet the total amount.
 
     Args:
@@ -11,16 +10,15 @@ def makeChange(coins, total):
     Returns:
         int: Fewest number of coins needed, or -1 if not possible.
     """
-    if not coins or coins is None:
-        return -1
     if total <= 0:
         return 0
-    change = 0
-    coins = sorted(coins)[::-1]
+
+    coins.sort(reverse=True)  # ترتيب العملات من الأكبر إلى الأصغر
+    count = 0
     for coin in coins:
-        while coin <= total:
-            total -= coin
-            change += 1
-        if (total == 0):
-            return change
-    return -1
+        if total <= 0:
+            break
+        count += total // coin
+        total %= coin
+
+    return count if total == 0 else -1

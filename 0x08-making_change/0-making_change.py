@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 
-""" Contains makeChange function"""
-
-
 def makeChange(coins, total):
-    """
-    Returns: fewest number of coins needed to meet total
-        If total is 0 or less, return 0
-        If total cannot be met by any number of coins you have, return -1
+     """
+    Determine the fewest number of coins needed to meet the total amount.
+
+    Args:
+        coins (list): List of coin denominations.
+        total (int): Total amount to make change for.
+
+    Returns:
+        int: Fewest number of coins needed, or -1 if not possible.
     """
     if not coins or coins is None:
         return -1

@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
-=======
 
 """ Contains makeChange function"""
->>>>>>> 38fba28adc96860d67296df2b4f12a93155d544f
 def makeChange(coins, total):
     """
     Determine the fewest number of coins needed to meet the total amount.

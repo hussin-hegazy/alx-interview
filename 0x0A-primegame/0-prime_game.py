@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"0-prime_game.py"
 def sieve_of_eratosthenes(limit):
     is_prime = [True] * (limit + 1)
     is_prime[0] = is_prime[1] = False

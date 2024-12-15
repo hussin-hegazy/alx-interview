@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Module for Prime Game"""
+
 def sieve_of_eratosthenes(limit):
+ """Function to get who has won in prime game"""
+
     is_prime = [True] * (limit + 1)
     is_prime[0] = is_prime[1] = False
     

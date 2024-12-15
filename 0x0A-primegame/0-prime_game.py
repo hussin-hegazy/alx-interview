@@ -2,7 +2,6 @@
 """Module defining the isWinner function and related helper functions."""
 
          
-
 def isWinner(x, nums):
     """
     Determines the winner of a set of prime number removal games.

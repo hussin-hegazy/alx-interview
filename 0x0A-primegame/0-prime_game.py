@@ -21,17 +21,17 @@ def play_round(n, primes):
         if available_numbers[prime]:
             for j in range(prime, n + 1, prime):
                 available_numbers[j] = False
-            player_turn = 1 - player_turn
+            player_turn = 1 - player_turn  # Swap player turn
     return "Maria" if player_turn == 1 else "Ben"
 
 def isWinner(x, nums):
     """Determine the winner of multiple rounds."""
-    if x <= 0 or not nums:
+    if x <= 0 or not nums or x != len(nums):
         return None
     primes = sieve_of_eratosthenes(max(nums))
     scores = {"Maria": 0, "Ben": 0}
     for n in nums:
-        winner = play_round(n, primes)
+        winner = play_round(n, primes[:])  # Ensure a fresh copy of primes
         scores[winner] += 1
     if scores["Maria"] > scores["Ben"]:
         return "Maria"
@@ -39,29 +39,3 @@ def isWinner(x, nums):
         return "Ben"
     else:
         return None
-def rm_multiples(ls, x):
-    """
-    Removes multiples of a prime number from an array of possible prime
-    numbers.
-
-    Args:
-        ls (list of int): An array of possible prime numbers.
-        x (int): The prime number to remove multiples of.
-
-    Returns:
-        None.
-
-    Raises:
-        None.
-    """
-    # This loop iterates over multiples of a prime number and marks them as
-    # non-prime by setting their corresponding value to 0 in the input
-    # list ls. Starting from 2, it sets every multiple of x up to the
-    # length of ls to 0. If the index i * x is out of range for the list ls,
-    # the try block will raise an IndexError exception, and the loop will
-    # terminate using the break statement.
-    for i in range(2, len(ls)):
-        try:
-            ls[i * x] = 0
-        except (ValueError, IndexError):
-            break

@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Module for Making Change.
+"""Making Change.
 """
 
 
 def makeChange(coins, total):
-    """Calculates the fewest number of coins needed to meet a given total.
+    """Calculates the  number of coins needed to meet a given total.
 
     If total is 0 or less, returns 0. If total cannot be met by any number
     of coins, returns -1.
     Assumes that coins is a list of the values of the coins in your
     possession, the value of a coin is always an integer greater than 0,
-    and you have an infinite number of each denomination of coin.
+    and you have an infinite number of each  of coin.
 
     Args:
         coins (list[int]): A list of coin values.
